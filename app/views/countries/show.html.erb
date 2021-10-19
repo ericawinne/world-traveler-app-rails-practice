@@ -1,7 +1,10 @@
 <h1><%= @country.name %></h1>
-<%= @country.description %>
+<p><%= @country.description %></p>
 
-<h2> Travelers </h2>
+<h3>Travelers to this country: </h3>
+
+<ul>
   <% @country.travelers.uniq.each do |traveler| %>
-<%= link_to traveler.name, traveler_path(traveler) %><br>
-<% end %>
+    <li><%= link_to traveler.name, traveler %></li>
+  <% end %>
+</ul>

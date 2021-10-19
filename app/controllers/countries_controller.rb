@@ -3,8 +3,7 @@ class CountriesController < ApplicationController
     @countries = Country.all
   end
 
-  def show 
+  def show
     @country = Country.find(params[:id])
   end
-  
 end

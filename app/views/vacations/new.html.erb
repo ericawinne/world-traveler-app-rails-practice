@@ -1,14 +1,13 @@
-<h1>New Vacation Form</h1>
-
-<%= form_for (@vacation) do |form| %>
-  <label> Country: </label><br>
-<%= form.collection_select :country_id, Country.all, :id, :name, prompt: true %>
-
-  <label> Traveler: </label><br>
-<%= form.collection_select :traveler_id, Traveler.all, :id, :name, prompt: true %>
-
-<label> Favorite? </label><br>
-<%= form.check_box :favorite %>
-
-<%= form.submit %>
+<h1>Add a new vacation!</h1>
+<%= form_for @vacation do |form| %>
+  <%= form.label :country %>
+  <%= form.collection_select :country_id, @all_countries, :id, :name %>
+  <br />
+  <%= form.label :traveler %>
+  <%= form.collection_select :traveler_id, @all_travelers, :id, :name %>
+  <br />
+  <%= form.label :favorite %>
+  <%= form.check_box :favorite %>
+  <br />
+  <%= form.submit %>
 <% end %>
